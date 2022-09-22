@@ -12,6 +12,23 @@
       "webRoot": "${workspaceFolder}/ui"
     },
     {
+      "name": "Debug UI Tests",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "node",
+      "program": "${workspaceRoot}/ui/node_modules/jest/bin/jest.js",
+      "args": [
+        "--watch",
+        "--runInBand",
+        "--no-cache",
+        "--env=jsdom"
+      ],
+      "cwd": "${workspaceRoot}/ui",
+      "protocol": "inspector",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
       "name": "Debug PY Build",
       "type": "python",
       "request": "launch",
@@ -22,19 +39,6 @@
       "args": [
         "bdist_wheel",
       ]
-    },
-    {
-      "name": "Debug PY App",
-      "type": "python",
-      "request": "launch",
-      "program": "${workspaceFolder}/py/venv/bin/wave",
-      "python": "${workspaceFolder}/py/venv/bin/python",
-      "cwd": "${workspaceFolder}/py/examples",
-      "args": [
-        "run",
-        "tour",
-        "--no-reload",
-      ],
     },
     {
       "name": "Debug Py Tests",
@@ -70,23 +74,6 @@
       "console": "integratedTerminal",
     },
     {
-      "name": "Debug UI Tests",
-      "type": "node",
-      "request": "launch",
-      "runtimeExecutable": "node",
-      "program": "${workspaceRoot}/ui/node_modules/jest/bin/jest.js",
-      "args": [
-        "--watch",
-        "--runInBand",
-        "--no-cache",
-        "--env=jsdom"
-      ],
-      "cwd": "${workspaceRoot}/ui",
-      "protocol": "inspector",
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen"
-    },
-    {
       "type": "node",
       "request": "launch",
       "name": "Debug Wavegen",
@@ -104,6 +91,19 @@
       "outFiles": [
         "${workspaceFolder}/tools/wavegen/build/**/*.js"
       ]
+    },
+    {
+      "name": "Debug Wave App",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/py/venv/bin/wave",
+      "python": "${workspaceFolder}/py/venv/bin/python",
+      "cwd": "${workspaceFolder}/py/examples",
+      "args": [
+        "run",
+        "tour",
+        "--no-reload",
+      ],
     },
     {
       "name": "Debug Wave Server",
